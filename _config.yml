@@ -28,7 +28,27 @@ github_username:  jekyll
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-feed
+# 特に更新情報をアピールしたいサイトを github pages で作成する予定は無いので、feed plugin は無効化したい。
+#  - jekyll-feed
+# が、minima テーマなどの依存関係に組み込まれていて無効化できない。
+# オプションで無効化する設定を探してみたが、開発/本番環境ともに、明示的に完全にOFFする方法を見つけられなかった。
+# -----------------------------
+# github サイト上でTOPに表示されるREADME.mdと、Webサイトのデフォルトで表示される index コンテンツは分けておきたい。
+# README.md にはサイトをビルドするときの手順や編集の注意点などを書いておき、
+# index.{html|md} にサイトの内容を表示するようにする。
+# jekyll-readme-index は標準で組み込まれるため、index.md を意図的に残しておき、README.md と分ける。
+# -----------------------------
+# 添付ファイルとしてのHTMLや、素組みのHTMLページ、あるいは純粋なソースコードサンプルとしての .md など、
+# jekyll front matter を含まない .md/.html についてはHTML変換を抑制したい。
+# github pages では依存関係に https://github.com/benbalter/jekyll-optional-front-matter が組み込まれていて、
+# 素の .md/.html でも jekyll にHTML変換される恐れがある。
+# -> optional_front_matter.enabled = false にカスタマイズして、明示的に disabled にする。
+# これにより foo/ 以下の front matter なしの素の .md/.html が as-is で _site/ にコピーされる。
+  - jekyll-optional-front-matter
+# -----------------------------
+
+optional_front_matter:
+  enabled: false
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
