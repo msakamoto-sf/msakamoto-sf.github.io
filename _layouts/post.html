@@ -1,0 +1,22 @@
+---
+layout: base
+---
+<div class="data_attrs_pre">
+作成日: {%- if page.date -%}{{ page.date | date: "%Y-%m-%d" }}{%- else -%}-{%- endif -%} &nbsp; 更新日: {%- if page.modified_date -%}{{ page.modified_date | escape}}{%- else -%}-{%- endif -%}<br>
+{% if page.tags.size > 0 -%}
+タグ: {%- for tag in page.tags -%}
+{{- tag | escape -}}&nbsp;
+{%- endfor -%}
+{%- endif -%}
+</div>
+
+{{ content }}
+
+<div class="data_attrs_post">
+{% comment %}
+属性フッター boiler plate<br>
+属性フッター boiler plate<br>
+属性フッター boiler plate<br>
+属性フッター boiler plate<br>
+{% endcomment %}
+</div>
