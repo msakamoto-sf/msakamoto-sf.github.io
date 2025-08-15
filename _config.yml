@@ -25,7 +25,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-markdown: kramdown
+markdown: GFM
 theme: minima
 plugins:
 # 特に更新情報をアピールしたいサイトを github pages で作成する予定は無いので、feed plugin は無効化したい。
