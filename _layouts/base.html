@@ -11,8 +11,8 @@
 {%- endif %}
 
 {%- if jekyll.environment == "production" -%}
-{%- assign site_top_url = site.url | append: site.baseurl -%}
-{%- assign style_url_prefix = site_top_url | append: 'assets' -%}
+{%- assign site_top_url = '/' -%}
+{%- assign style_url_prefix = '/assets' -%}
 {%- else -%}
 {%- assign site_top_url = '/_site/' -%}
 {%- assign style_url_prefix = '/assets' -%}

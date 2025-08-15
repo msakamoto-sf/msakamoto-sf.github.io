@@ -22,6 +22,11 @@ url: "https://msakamoto-sf.github.io" # the base hostname & protocol for your si
 twitter_username: msakamoto_sf
 github_username:  msakamoto-sf
 
+# この設定が無いと production ENV でビルドしたときに以下のようなエラーが出る。
+# No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configuration, or set up an 'origin' git remote pointing to your github.com repository.
+repository: msakamoto-sf/msakamoto-sf.github.io
+# ただ、これを設定すると site.baseurl が overwrite される？挙動を見たので、_layouts の方で独自に url prefix を設定している。
+
 # Build settings
 markdown: GFM
 theme: minima
