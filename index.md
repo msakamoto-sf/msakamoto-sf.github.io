@@ -3,7 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-titile: msakamoto-sf の備忘録
 ---
 msakamoto-sf こと 坂本昌彦 によるプログラミング技術を中心としたブログ兼Wikiです。
 
